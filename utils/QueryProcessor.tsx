@@ -16,7 +16,7 @@ export default function QueryProcessor(query: string): string {
       "Your name is mswebste.");
   }
 
-  if (query.toLowerCase().includes("What is 63 plus 27?")) {
+  if (query.toLowerCase().includes("What is 63 plus 27")) {
     return (
       "90.");
   }
@@ -26,7 +26,7 @@ export default function QueryProcessor(query: string): string {
       "11.");
   }
 
-  if (query.toLowerCase().includes("What is 20 plus 48?")) {
+  if (query.toLowerCase().includes("What is 20 plus 48")) {
     return (
       "68.");
   }

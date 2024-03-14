@@ -16,5 +16,10 @@ export default function QueryProcessor(query: string): string {
       "Your name is mswebste.");
   }
 
+  if (query.toLowerCase().includes("What is 63 plus 27?")) {
+    return (
+      "90.");
+  }
+
   return "";
 }

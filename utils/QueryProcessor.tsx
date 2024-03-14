@@ -1,11 +1,20 @@
 export default function QueryProcessor(query: string): string {
-  const regex: RegExp = /What is (\d+) plus (\d+)/i;
-  const match: RegExpMatchArray | null = query.match(regex);
-  if (match) {
-    const num1: number = parseInt(match[1]);
-    const num2: number = parseInt(match[2]);
+  const regex1: RegExp = /What is (\d+) plus (\d+)/i;
+  const match1: RegExpMatchArray | null = query.match(regex1);
+  if (match1) {
+    const num1: number = parseInt(match1[1]);
+    const num2: number = parseInt(match1[2]);
     const sum: number = num1 + num2;
     return sum.toString(); 
+  }
+
+  const regex2: RegExp = /What is (\d+) multiplied by (\d+)/i;
+  const match2: RegExpMatchArray | null = query.match(regex2);
+  if (match2) {
+    const val1: number = parseInt(match2[1]);
+    const val2: number = parseInt(match2[2]);
+    const prod: number = val1 * val2;
+    return prod.toString();
   }
 
   if (query.toLowerCase().includes("shakespeare")) {
@@ -15,7 +24,7 @@ export default function QueryProcessor(query: string): string {
       "writer in the English language and the world's pre-eminent dramatist."
     );
   }
-  
+
   if (query.toLowerCase().includes("andrew id")) {
     return (
       "Your Andrew ID is mswebste.");

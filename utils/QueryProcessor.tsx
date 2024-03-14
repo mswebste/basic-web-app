@@ -17,6 +17,15 @@ export default function QueryProcessor(query: string): string {
     return prod.toString();
   }
 
+  const regex3: RegExp = /What is (\d+) to the power of (\d+)/i;
+  const match3: RegExpMatchArray | null = query.match(regex3);
+  if (match3) {
+    const x: number = parseInt(match3[1]);
+    const y: number = parseInt(match3[2]);
+    const ans: number = Math.pow(x, y);
+    return ans.toString(); 
+  }
+
   if (query.toLowerCase().includes("shakespeare")) {
     return (
       "William Shakespeare (26 April 1564 - 23 April 1616) was an " +
